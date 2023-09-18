@@ -1,0 +1,12 @@
+export * from './homePageServiceList'
+export * from './reasonChooseUs'
+export * from './serviceViewItem'
+export * from './customerLogoList'
+export * from './activityList'
+export * from './advisorList'
+export * from './businessResultSection'
+export * from './newsSection'
+export * from './appStoreSection'
+export * from './multiTaskIntroSection'
+export * from './productsByAttributeMinor'
+

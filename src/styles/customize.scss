@@ -1,0 +1,178 @@
+@import './variables.scss';
+
+/* =============title============= */
+
+.title_xs {
+  @apply text-text-color leading-7 text-xs font-bold;
+}
+
+.title_sm {
+  @apply text-text-color leading-8 text-sm font-bold;
+}
+.title {
+  @apply text-text-color leading-8 text-base font-bold;
+}
+.title_md {
+  @apply text-text-color leading-9 text-md font-bold;
+}
+.title_lg {
+  @apply text-text-color leading-10 text-lg font-bold;
+}
+.title_xl {
+  @apply text-text-color leading-10 text-xl font-bold;
+}
+.title_2xl {
+  @apply text-text-color leading-10 text-2xl font-bold;
+}
+
+/* =============text============= */
+
+.text_xs {
+  @apply text-text-color leading-7 text-xs font-medium;
+}
+
+.text_sm {
+  @apply text-text-color leading-8 text-sm font-medium;
+}
+
+.text {
+  @apply text-text-color leading-8 text-base font-medium;
+}
+
+.text_md {
+  @apply text-text-color leading-9 text-md font-medium;
+}
+
+.text_lg {
+  @apply text-text-color leading-10 text-lg font-medium;
+}
+
+.text_xl {
+  @apply text-text-color leading-10 text-xl font-medium;
+}
+
+@layer utilities {
+  .text-primary-gradient {
+    @apply bg-gradient-to-b from-[#00DED1] from-[0.52%] to-[#2589FF] to-[100%];
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .bg-primary-gradient {
+    @apply bg-gradient-to-b from-[#00DED1] from-[0.52%] to-[#2589FF] to-[100%];
+  }
+
+  .bg-primary-gradient-100 {
+    @apply bg-gradient-to-b from-[#dce9fa] from-[0%] to-[#c3fcf7] to-[150%];
+  }
+
+  .box-shadow-xs {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+
+  .box-shadow-sm {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+
+  .box-shadow-md {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+}
+
+@keyframes biggerAnimation {
+  0% {
+    transform: scale(0);
+  }
+  25% {
+    transform: scale(0.25);
+  }
+  50% {
+    transform: scale(0.5);
+  }
+  75% {
+    transform: scale(0.75);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+// custom effect
+
+.effect-in-out {
+  @apply duration-200 ease-in-out;
+}
+
+.effect-linear {
+  @apply duration-200 ease-linear;
+}
+
+// andt tool-tip custom
+.ant-tooltip-inner {
+  background-color: white !important;
+  width: fit-content;
+  color: black !important;
+}
+
+.ant-tooltip {
+  --antd-arrow-background-color: #fff !important;
+}
+
+// custom zalo
+.zalo-chat-widget {
+  bottom: 70px !important;
+  right: 25px !important;
+  border: none !important;
+  outline: none !important;
+  z-index: 99 !important;
+
+  @include responsive(md-screen) {
+    bottom: 120px !important;
+  }
+}
+
+// forwardlink
+.forward-link {
+  position: relative;
+  width: fit-content;
+  cursor: pointer;
+  display: block;
+  transition-duration: 150ms linear;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1.5px;
+    bottom: 0;
+    left: 0;
+    background-color: $primary;
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+  }
+
+  &:hover {
+    color: $primary;
+    &::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+//customer input number button
+@layer base {
+  input[type='number']::-webkit-outer-spin-button,
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number'] {
+    -webkit-appearance: none;
+    -moz-appearance: textfield !important;
+    margin: 0;
+  }
+}
